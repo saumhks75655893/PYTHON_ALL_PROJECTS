@@ -7,6 +7,7 @@ voices = eg.getProperty("voices")
 # print(voices[1].id)
 newVoiceRate = 130
 eg.setProperty('rate', newVoiceRate)
+eg.setProperty('voice',voices[0].id)
 
 
 # for voice
