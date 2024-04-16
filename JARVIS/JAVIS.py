@@ -30,7 +30,24 @@ def wishMe():
 # to take input from the user 
 def takeInput():
     ''' It takes microphone input from the user and return string output. '''
+    r = sr.Recognizer()
+
+    try: 
+        print("Listenning .........")
+        with sr.Microphone() as source:
+            
+            r.adjust_for_ambient_noise(source,duration=0.2)
+
+            audio = r.listen(source)
+
+            text = r.recognize_google(audio)
+            print("Did you say : ",text)
+            speak(text)
+
+    except: 
+        print("Sorry! Please repeat again .... ")
 
 # our own files(make it to read automatically using speech recognization system )
 if __name__ == "__main__":
     wishMe()
+    takeInput()
