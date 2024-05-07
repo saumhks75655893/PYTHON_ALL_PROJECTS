@@ -1,17 +1,17 @@
 # SNAKE GAME
 import pygame
 from pygame.locals import *
-import os
+import time
 
 
 class Game:
     def __init__(self):
         # initialize the pygame module
-        pygame.init()
+        pygame.init()   
 
         self.w = 1300
         self.h = 670
-        self.surface = pygame.display.set_mode((self.w,self.h))
+        self.surface = pygame.display.set_mode((self.w, self.h))
 
         self.snake = snake(self.surface)
         self.snake.draw()
@@ -41,18 +41,20 @@ class Game:
                 elif event.type == QUIT:
                     running = False
 
+        time.sleep(0.2)
+        self.snake.walk()
 
 class snake:
-    def __init__(self, parent_screen):
-        self.parent_screen = parent_screen
+    def __init__(self, screen):
+        self.screen = screen
         self.img_blc = pygame.image.load("resources/block.jpg")
         self.img_blc.convert()
         self.x = 100
         self.y = 100
 
     def draw(self):
-        self.parent_screen.fill((110, 247, 110))
-        self.parent_screen.blit(self.img_blc, (self.x, self.y))
+        self.screen.fill((110, 247, 110))
+        self.screen.blit(self.img_blc, (self.x, self.y))
         pygame.display.flip()
 
     def move_up(self):
@@ -71,6 +73,8 @@ class snake:
         self.x = self.x + 10
         self.draw()
 
+    def walk(self):
+        pass
 
 if __name__ == "__main__":
 
