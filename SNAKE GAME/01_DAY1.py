@@ -47,7 +47,7 @@ class Game:
 class snake:
     def __init__(self, screen):
         self.screen = screen
-        self.img_blc = pygame.image.load("resources/block.jpg")
+        self.img_blc = pygame.image.load("SNAKE GAME/resources/block.jpg")
         self.img_blc.convert()
         self.x = 100
         self.y = 100
