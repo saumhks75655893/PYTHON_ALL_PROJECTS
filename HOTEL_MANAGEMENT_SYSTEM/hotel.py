@@ -11,7 +11,7 @@ class HotelManagmentSystem:
     def __init__(self, root):
         self.root = root
         self.root.title("HOTEL MANAGEMENT SYSTEM")
-        self.root.geometry("1300x700+0+0")
+        self.root.geometry("1300x700+0+0")  
 
         # ============= First Image ===============
         # 1st
